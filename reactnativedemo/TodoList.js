@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import TodoListItem from "./TodoListItem";
+import NewTodoButton from "./NewTodoButton";
 
 export default class TodoList extends React.Component {
   constructor() {
@@ -23,6 +24,9 @@ export default class TodoList extends React.Component {
   render() {
     return (
       <View style={styles.todoList}>
+        <NewTodoButton
+          onPress={() => console.log("Nytt gjøremål-knapp trykt!")}
+        />
         <ScrollView>{this.scrollViewArray()}</ScrollView>
       </View>
     );
