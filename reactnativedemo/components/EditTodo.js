@@ -1,6 +1,5 @@
 import React from "react";
-import {Text, View, TextInput, DatePickerIOS, SafeAreaView, Button} from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
+import {DatePicker, Button, Text, Input, View, Form, Item} from 'native-base';
 
 export default class EditTodo extends React.Component {
     constructor(props) {
@@ -23,36 +22,34 @@ export default class EditTodo extends React.Component {
         }
 
         addTodo() {
+            console.log("Legg til gjøremål")
         }
 
     render() {
       return (
         <View>
-            <SafeAreaView>
-                <Text>
-                    Nytt gjøremål
-                </Text>
-                <TextInput
-                    placeholder={this.nameOfTodo}
-                    onChange={this.setName}
-                    />
-                <DatePickerIOS 
-                    date ={this.state.chosenDate}
+            <Form>
+                <Item>
+                <Input
+                placeholder="Nytt gjøremål"
+                onChange={this.setName}
+                />
+                </Item>
+                <Item last>
+                <DatePicker
+                    defaultData={this.state.chosenDate}
                     onDateChange={this.setDate}
+                    placeHolderText="Velg dato"
+                    locale={"no"}
                 />
+                </Item>
                 <Button
-                    title="Legg til gjøremål"
+                    full
                     onPress={this.addTodo}
-                    onPress={() => {
-                        this.props.navigation.dispatch(StackActions.reset({
-                        index: 0,
-                        actions: [
-                            NavigationActions.navigate({ routeName: 'Home' })
-                        ],
-                        }))
-                    }}
-                />
-            </SafeAreaView>
+                    >
+                    <Text>Lagre</Text>
+                </Button>
+            </Form>
         </View>
       );
     }

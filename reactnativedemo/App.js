@@ -1,6 +1,6 @@
 import React from "react";
 import EditTodo from "./components/EditTodo";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   Body,
   Button,
@@ -52,8 +52,8 @@ export default class App extends React.Component {
         </Header>
         <Content padder>
           <Text>Dette er Content.</Text>
-          <TodoList />
           <EditTodo />
+          <TodoList />
         </Content>
         <Footer>
           <FooterTab>
