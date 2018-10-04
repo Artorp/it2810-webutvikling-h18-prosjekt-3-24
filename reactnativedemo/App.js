@@ -16,6 +16,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "auto", // Fyll hele bredden av skjermen med appen.
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"

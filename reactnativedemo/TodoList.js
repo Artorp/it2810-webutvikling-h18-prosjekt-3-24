@@ -8,7 +8,7 @@ export default class TodoList extends React.Component {
     super();
     this.items = [];
     for (i = 0; i < 60; i++) this.items.push("Listeoppføring");
-    console.log("this.items i TodoList:", this.items);
+    // console.log("this.items i TodoList:", this.items);
   }
 
   scrollViewArray() {
@@ -32,6 +32,7 @@ export default class TodoList extends React.Component {
 const styles = StyleSheet.create({
   todoList: {
     flex: 1,
+    width: "100%", // La listen fylle hele bredden av appen.
     backgroundColor: "#111",
     alignItems: "center",
     justifyContent: "center"
