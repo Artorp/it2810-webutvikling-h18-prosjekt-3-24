@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 import {
   Body,
   Button,
@@ -71,5 +71,12 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {}
+  container: {
+    flex: 1,
+    ...Platform.select({
+      android: {
+        marginTop: StatusBar.currentHeight
+      }
+    })
+  }
 });
