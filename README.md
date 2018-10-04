@@ -79,10 +79,10 @@ Det lar oss se på endringer og diskutere/justere dem i samarbeid før de blir d
 Dessuten er det mye lettere å glemme å tagge en issue i en commitmelding.
 Det blir også lettere å tolke commit-treet i ettertid og se hva som skjedde når.
 
-<!--
 ### Kilder
 
-TODO -->
+Vi har brukt kodesnutter fra denne siden:
+- https://tutorialscapital.com/react-native-adding-items-in-scrollview-using-loop-method-android-ios-tutorial-from-scratch/
 
 <!-- ### Testing
 
