@@ -1,11 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import TodoList from "./TodoList";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <TodoList />
+        <Text>Testtekst</Text>
       </View>
     );
   }
@@ -14,6 +16,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "auto", // Fyll hele bredden av skjermen med appen.
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
