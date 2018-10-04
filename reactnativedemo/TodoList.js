@@ -1,6 +1,8 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
+import TodoListItem from "./TodoListItem";
+
 export default class TodoList extends React.Component {
   constructor() {
     super();
@@ -12,9 +14,7 @@ export default class TodoList extends React.Component {
   scrollViewArray() {
     return this.items.map((item, key) => (
       <View key={key} style={styles.item}>
-        <Text style={styles.text}>
-          Oppføring nummer {key} – {item}
-        </Text>
+        <TodoListItem />
         <View style={styles.separator} />
       </View>
     ));
