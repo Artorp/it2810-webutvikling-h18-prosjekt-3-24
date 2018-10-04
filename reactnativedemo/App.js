@@ -1,4 +1,5 @@
 import React from "react";
+import EditTodo from "./components/EditTodo";
 import { Platform, StatusBar, StyleSheet } from "react-native";
 import {
   Body,
@@ -14,7 +15,6 @@ import {
   Text,
   Title
 } from "native-base";
-
 import TodoList from "./TodoList";
 
 export default class App extends React.Component {
@@ -37,6 +37,7 @@ export default class App extends React.Component {
       return <Expo.AppLoading />;
     }
     return (
+
       <Container style={styles.container}>
         <Header>
           <Left>
@@ -51,6 +52,7 @@ export default class App extends React.Component {
         </Header>
         <Content padder>
           <Text>Dette er Content.</Text>
+          <EditTodo />
           <TodoList />
         </Content>
         <Footer>
