@@ -38,50 +38,12 @@ export default class App extends React.Component {
       return <Expo.AppLoading />
     }
     return (
-      // <Container style={styles.container}>
-      //   <Header>
-      //     <Left>
-      //       <Button transparent>
-      //         <Icon name="menu" />
-      //       </Button>
-      //     </Left>
-      //     <Body>
-      //       <Title>Header</Title>
-      //     </Body>
-      //     <Right />
-      //   </Header>
-      //   <Content padder>
-          <Router>
+          <Router hideNavBar= "true">
             <Scene key="root">
-              <Scene key="todoList" component={TodoList} title="TodoList" initial={true} />
+              <Scene key="todoList" component={TodoList} title="TodoList" initial={true} hideNavBar={true} />
               <Scene key="editTodo" component={EditTodo} title="EditTodo" />
             </Scene>
           </Router>
-      //   </Content>
-      //   <Footer>
-      //     <FooterTab>
-      //       <Button full>
-      //         <Text>Fane 1</Text>
-      //       </Button>
-      //     </FooterTab>
-      //     <FooterTab>
-      //       <Button full>
-      //         <Text>Fane 2</Text>
-      //       </Button>
-      //     </FooterTab>
-      //   </Footer>
-      // </Container>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      android: {
-        marginTop: StatusBar.currentHeight
-      }
-    })
-  }
-})
