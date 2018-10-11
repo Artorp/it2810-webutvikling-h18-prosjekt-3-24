@@ -1,6 +1,6 @@
-import React from "react";
-import EditTodo from "./components/EditTodo";
-import { Platform, StatusBar, StyleSheet } from "react-native";
+import React from 'react';
+import EditTodo from './components/EditTodo';
+import { Platform, StatusBar, StyleSheet } from 'react-native';
 import {
   Body,
   Button,
@@ -14,71 +14,36 @@ import {
   Right,
   Text,
   Title
-} from "native-base";
-import TodoList from "./TodoList";
+} from 'native-base';
+import TodoList from './TodoList';
+import { Router, Scene } from 'react-native-router-flux';
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { loading: true };
+  constructor (props) {
+    super(props)
+    this.state = { loading: true }
   }
 
-  async componentWillMount() {
+  async componentWillMount () {
     await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
-    });
-    this.setState({ loading: false });
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      Ionicons: require('@expo/vector-icons/fonts/Ionicons.ttf')
+    })
+    this.setState({ loading: false })
   }
 
-  render() {
+  render () {
     if (this.state.loading) {
-      return <Expo.AppLoading />;
+      return <Expo.AppLoading />
     }
     return (
-
-      <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content padder>
-          <Text>Dette er Content.</Text>
-          <EditTodo />
-          <TodoList />
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 1</Text>
-            </Button>
-          </FooterTab>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 2</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
-    );
+          <Router hideNavBar= "true">
+            <Scene key="root">
+              <Scene key="todoList" component={TodoList} title="TodoList" initial={true} hideNavBar={true} />
+              <Scene key="editTodo" component={EditTodo} title="EditTodo" />
+            </Scene>
+          </Router>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      android: {
-        marginTop: StatusBar.currentHeight
-      }
-    })
-  }
-});
