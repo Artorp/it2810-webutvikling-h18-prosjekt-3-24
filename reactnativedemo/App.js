@@ -1,6 +1,7 @@
-import React from 'react';
-import EditTodo from './components/EditTodo';
-import { Platform, StatusBar, StyleSheet } from 'react-native';
+import React from 'react'
+import EditTodo from './components/EditTodo'
+import StepCounter from './components/StepCounter'
+import { Platform, StatusBar, StyleSheet } from 'react-native'
 import {
   Body,
   Button,
@@ -14,8 +15,8 @@ import {
   Right,
   Text,
   Title
-} from 'native-base';
-import TodoList from './TodoList';
+} from 'native-base'
+import TodoList from './TodoList'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -51,6 +52,7 @@ export default class App extends React.Component {
           <Right />
         </Header>
         <Content padder>
+          <StepCounter />
           <Text>Dette er Content.</Text>
           <EditTodo />
           <TodoList />
