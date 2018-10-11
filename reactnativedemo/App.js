@@ -16,6 +16,7 @@ import {
   Title
 } from 'native-base';
 import TodoList from './TodoList';
+import { Router, Scene } from 'react-native-router-flux';
 
 export default class App extends React.Component {
   constructor (props) {
@@ -37,37 +38,39 @@ export default class App extends React.Component {
       return <Expo.AppLoading />
     }
     return (
-
-      <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content padder>
-          <Text>Dette er Content.</Text>
-          <EditTodo />
-          <TodoList />
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 1</Text>
-            </Button>
-          </FooterTab>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 2</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      // <Container style={styles.container}>
+      //   <Header>
+      //     <Left>
+      //       <Button transparent>
+      //         <Icon name="menu" />
+      //       </Button>
+      //     </Left>
+      //     <Body>
+      //       <Title>Header</Title>
+      //     </Body>
+      //     <Right />
+      //   </Header>
+      //   <Content padder>
+          <Router>
+            <Scene key="root">
+              <Scene key="todoList" component={TodoList} title="TodoList" initial={true} />
+              <Scene key="editTodo" component={EditTodo} title="EditTodo" />
+            </Scene>
+          </Router>
+      //   </Content>
+      //   <Footer>
+      //     <FooterTab>
+      //       <Button full>
+      //         <Text>Fane 1</Text>
+      //       </Button>
+      //     </FooterTab>
+      //     <FooterTab>
+      //       <Button full>
+      //         <Text>Fane 2</Text>
+      //       </Button>
+      //     </FooterTab>
+      //   </Footer>
+      // </Container>
     )
   }
 }

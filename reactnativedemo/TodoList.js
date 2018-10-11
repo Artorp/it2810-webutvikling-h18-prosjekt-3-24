@@ -5,6 +5,8 @@ import { List, ListItem, Text } from "native-base";
 import TodoListItem from "./TodoListItem";
 import NewTodoButton from "./NewTodoButton";
 
+import { Actions } from 'react-native-router-flux';
+
 export default class TodoList extends React.Component {
   constructor() {
     super();
@@ -25,7 +27,7 @@ export default class TodoList extends React.Component {
     return (
       <View>
         <NewTodoButton
-          onPress={() => console.log("Nytt gjøremål-knapp trykt!")}
+          onPress= {() => {Actions.editTodo(); }}
         />
         <List>{this.scrollViewArray()}</List>
       </View>
