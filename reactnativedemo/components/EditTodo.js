@@ -1,5 +1,6 @@
 import React from "react";
 import {DatePicker, Button, Text, Input, View, Form, Item} from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
 export default class EditTodo extends React.Component {
     constructor(props) {
@@ -46,6 +47,7 @@ export default class EditTodo extends React.Component {
                 <Button
                     full
                     onPress={this.addTodo}
+                    onPress= {() => {Actions.pop(); }}>
                     >
                     <Text>Lagre</Text>
                 </Button>
