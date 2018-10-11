@@ -47,7 +47,7 @@ export default class EditTodo extends React.Component {
               Actions.pop()
             }}
           >
-            ><Text>Lagre</Text>
+            <Text>Lagre</Text>
           </Button>
         </Form>
       </View>
