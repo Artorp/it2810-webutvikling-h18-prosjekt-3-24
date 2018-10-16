@@ -1,1 +1,1 @@
-jest.mock('DatePickerIOS', () => 'DatePickerIOS')
+jest.mock("DatePickerIOS", () => "DatePickerIOS");

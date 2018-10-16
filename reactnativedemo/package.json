@@ -34,6 +34,8 @@
     ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
+      "!__tests__/**",
+      "!.eslintrc.js",
       "!**/node_modules/**",
       "!**/coverage/**",
       "!**/native-base-**"
