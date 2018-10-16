@@ -1,4 +1,4 @@
-# IT2810 Webutvikling – Prosjekt 2 – gruppe 24
+# IT2810 Webutvikling – Prosjekt 3 – gruppe 24
 
 Dette er det tredje prosjektet i emnet IT2810 Webutvikling på NTNU høsten 2018. Gruppen består av Mathias Bynke, Henrik Grønbech og Maria Osen.
 
