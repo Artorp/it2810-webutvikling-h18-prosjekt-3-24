@@ -1,31 +1,31 @@
-import React from 'react'
-import { DatePicker, Button, Text, Input, View, Form, Item } from 'native-base'
-import { Actions } from 'react-native-router-flux'
+import React from "react";
+import { DatePicker, Button, Text, Input, View, Form, Item } from "native-base";
+import { Actions } from "react-native-router-flux";
 
 export default class EditTodo extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       chosenDate: new Date(),
       nameOfTodo: this.nameOfTodo
-    }
-    this.setDate = this.setDate.bind(this)
-    this.setName = this.setName.bind(this)
+    };
+    this.setDate = this.setDate.bind(this);
+    this.setName = this.setName.bind(this);
   }
 
-  setDate (newDate) {
-    this.setState({ chosenDate: newDate })
+  setDate(newDate) {
+    this.setState({ chosenDate: newDate });
   }
 
-  setName (newName) {
-    this.setState({ nameOfTodo: newName })
+  setName(newName) {
+    this.setState({ nameOfTodo: newName });
   }
 
-  addTodo () {
-    console.log('Legg til gjøremål')
+  addTodo() {
+    console.log("Legg til gjøremål");
   }
 
-  render () {
+  render() {
     return (
       <View>
         <Form>
@@ -37,20 +37,20 @@ export default class EditTodo extends React.Component {
               defaultData={this.state.chosenDate}
               onDateChange={this.setDate}
               placeHolderText="Velg dato"
-              locale={'no'}
+              locale={"no"}
             />
           </Item>
           <Button
             full
             onPress={this.addTodo}
             onPress={() => {
-              Actions.pop()
+              Actions.pop();
             }}
           >
             <Text>Lagre</Text>
           </Button>
         </Form>
       </View>
-    )
+    );
   }
 }
