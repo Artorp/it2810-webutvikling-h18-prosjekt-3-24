@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blir tegnet riktig 1`] = `
+<View
+  style={Object {}}
+  virtual={undefined}
+>
+  <View
+    style={Object {}}
+    virtual={undefined}
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomWidth": 1,
+          "borderColor": "#D9D5DC",
+          "borderLeftWidth": 0,
+          "borderRadius": undefined,
+          "borderRightWidth": 0,
+          "borderTopWidth": 0,
+          "borderWidth": undefined,
+          "flexDirection": "row",
+          "marginLeft": 15,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onChange={[Function]}
+        placeholder="Nytt gjøremål"
+        placeholderTextColor="#575757"
+        style={
+          Object {
+            "color": "#000",
+            "flex": 1,
+            "fontSize": 17,
+            "height": 50,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "top": 1.5,
+          }
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        virtual={undefined}
+      />
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomWidth": 1,
+          "borderColor": "#D9D5DC",
+          "borderLeftWidth": 0,
+          "borderRadius": undefined,
+          "borderRightWidth": 0,
+          "borderTopWidth": 0,
+          "borderWidth": undefined,
+          "flexDirection": "row",
+          "marginLeft": 0,
+          "opacity": 1,
+          "paddingLeft": 15,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View>
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "#000",
+                  "padding": 10,
+                },
+                undefined,
+              ]
+            }
+            uppercase={false}
+            virtual={undefined}
+          >
+            Velg dato
+          </Text>
+          <View>
+            <Modal
+              animationType={undefined}
+              hardwareAccelerated={false}
+              onRequestClose={[Function]}
+              transparent={undefined}
+              visible={false}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                      "flex": 1,
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <DatePickerIOS
+                date={2000-01-01T00:00:00.000Z}
+                locale="no"
+                maximumDate={undefined}
+                minimumDate={undefined}
+                mode="date"
+                onDateChange={[Function]}
+                timeZoneOffsetInMinutes={undefined}
+              />
+            </Modal>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#007aff",
+          "borderBottomWidth": null,
+          "borderColor": "#007aff",
+          "borderLeftWidth": null,
+          "borderRadius": 0,
+          "borderRightWidth": null,
+          "borderTopWidth": null,
+          "borderWidth": undefined,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "center",
+          "opacity": 1,
+          "paddingBottom": 6,
+          "paddingTop": 6,
+          "shadowColor": undefined,
+          "shadowOffset": undefined,
+          "shadowOpacity": undefined,
+          "shadowRadius": undefined,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 16.5,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          }
+        }
+        uppercase={false}
+        virtual={undefined}
+      >
+        Lagre
+      </Text>
+    </View>
+  </View>
+</View>
+`;
