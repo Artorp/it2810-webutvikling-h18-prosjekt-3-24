@@ -29,6 +29,10 @@
   "jest": {
     "collectCoverage": true,
     "preset": "jest-expo",
+    "testRegex": "./__tests__/[^setup].*.js$",
+    "setupFiles": [
+      "./__tests__/setup.js"
+    ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
