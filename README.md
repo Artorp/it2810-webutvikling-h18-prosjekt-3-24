@@ -91,7 +91,8 @@ Vi tester appen med Jest.
 Vi bruker flere «snapshot»-tester som sjekker at komponentene ikke forandrer seg utilsiktet.
 
 Obs: Vi hadde store problemer med å få testing av komponenten `App` til å virke.
-Vi valgte til slutt å bruke tid på andre ting framfor denne testen, og den er derfor fjernet.
+Etter å har brukt mye tid på å få til en «snapshot»-test, valgte vi til slutt å bruke tid på andre ting, og den er derfor fjernet.
+Den er erstattet med en enkel test som kun tester konstruktøren til `App`.
 `App` er rotkomponenten, og en feil her er heldigvis fort synlig når vi prøver appen manuelt.
 
 <!--
