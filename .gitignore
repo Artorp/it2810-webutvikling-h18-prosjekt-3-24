@@ -256,7 +256,6 @@ buck-out/
 .buckd/
 .buckversion
 .fakebuckversion
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -294,3 +293,10 @@ $RECYCLE.BIN/
 
 # Expo
 .expo/
+
+node_modules/**/*
+.expo/*
+npm-debug.*
+
+# Testing
+coverage/
