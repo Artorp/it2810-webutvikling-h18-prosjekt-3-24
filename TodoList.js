@@ -20,6 +20,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 import TodoListItem from './TodoListItem';
 import NewTodoButton from './NewTodoButton';
+import StepCounter from './components/StepCounter';
 
 export default class TodoList extends React.Component {
   constructor() {
@@ -52,6 +53,7 @@ export default class TodoList extends React.Component {
           <Right />
         </Header>
         <Content padder>
+          <StepCounter/>
           <NewTodoButton
             onPress={() => {
               Actions.editTodo();
