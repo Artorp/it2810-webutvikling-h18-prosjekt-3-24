@@ -1,8 +1,8 @@
-import React from "react";
-import TodoList from "../TodoList";
-import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import TodoList from '../TodoList';
 
-test("blir tegnet riktig", () => {
+test('blir tegnet riktig', () => {
   const tree = renderer.create(<TodoList />).toJSON();
   expect(tree).toMatchSnapshot();
 });
