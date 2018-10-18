@@ -25,14 +25,13 @@ export default class TodoList extends React.Component {
   constructor() {
     super();
     this.items = [];
-    for (let i = 0; i < 60; i++) this.items.push('Listeoppføring');
-    // console.log("this.items i TodoList:", this.items);
+    for (let i = 0; i < 60; i++) this.items.push('Gjøremål nummer ' + i);
   }
 
   scrollViewArray() {
     return this.items.map((item, key) => (
       <ListItem key={key}>
-        <TodoListItem />
+        <TodoListItem name={item} />
       </ListItem>
     ));
   }
