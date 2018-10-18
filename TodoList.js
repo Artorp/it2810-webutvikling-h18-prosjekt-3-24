@@ -1,8 +1,8 @@
-import React from "react";
-import { StyleSheet, View, Platform, StatusBar } from "react-native";
-import { List, ListItem} from "native-base";
-
+import React from 'react';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 import {
+  List,
+  ListItem,
   Body,
   Button,
   Container,
@@ -14,19 +14,18 @@ import {
   Left,
   Right,
   Text,
-  Title
+  Title,
 } from 'native-base';
 
-import TodoListItem from "./TodoListItem";
-import NewTodoButton from "./NewTodoButton";
-
 import { Actions } from 'react-native-router-flux';
+import TodoListItem from './TodoListItem';
+import NewTodoButton from './NewTodoButton';
 
 export default class TodoList extends React.Component {
   constructor() {
     super();
     this.items = [];
-    for (i = 0; i < 60; i++) this.items.push("Listeoppføring");
+    for (let i = 0; i < 60; i++) this.items.push('Listeoppføring');
     // console.log("this.items i TodoList:", this.items);
   }
 
@@ -40,24 +39,26 @@ export default class TodoList extends React.Component {
 
   render() {
     return (
-       <Container style={styles.container}>
-         <Header>
-           <Left>
-             <Button transparent>
-               <Icon name="menu" />
-             </Button>
-           </Left>
-           <Body>
-             <Title>Header</Title>
-           </Body>
-           <Right />
-         </Header>
-          <Content padder>
+      <Container style={styles.container}>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
           <NewTodoButton
-            onPress= {() => {Actions.editTodo(); }}
+            onPress={() => {
+              Actions.editTodo();
+            }}
           />
           <List>{this.scrollViewArray()}</List>
-          </Content>
+        </Content>
         <Footer>
           <FooterTab>
             <Button full>
@@ -80,8 +81,8 @@ const styles = StyleSheet.create({
     flex: 1,
     ...Platform.select({
       android: {
-        marginTop: StatusBar.currentHeight
-      }
-    })
-  }
-})
+        marginTop: StatusBar.currentHeight,
+      },
+    }),
+  },
+});

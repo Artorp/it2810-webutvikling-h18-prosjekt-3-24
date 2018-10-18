@@ -1,6 +1,6 @@
-import React from "react";
-import EditTodo from "../components/EditTodo";
-import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import EditTodo from '../components/EditTodo';
 
 // console.error = jest.fn();
 
@@ -8,7 +8,7 @@ import renderer from "react-test-renderer";
 //   console.error.mockClear();
 // });
 
-test("blir tegnet riktig", () => {
+test('blir tegnet riktig', () => {
   const tree = renderer.create(<EditTodo />).toJSON();
   expect(tree).toMatchSnapshot();
 });
