@@ -60,7 +60,7 @@ export default class StepCounter extends React.Component {
   render() {
     return (
       <View>
-        <Text>Steps taken today: {this.state.todayStepCount}</Text>
+        <Text>Du har gått {this.state.todayStepCount} skritt i dag</Text>
       </View>
     );
   }
