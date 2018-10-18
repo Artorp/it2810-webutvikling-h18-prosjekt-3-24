@@ -2,7 +2,7 @@
 // https://www.npmjs.com/package/eslint-config-react-native
 
 module.exports = {
-  extends: "react-native",
+  extends: "universe/native",
   env: {
     jest: true
   }
