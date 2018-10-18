@@ -3,6 +3,6 @@ import { Text } from 'native-base';
 
 export default class TodoListItem extends React.Component {
   render() {
-    return <Text>Gjøremål</Text>;
+    return <Text>{this.props.name}</Text>;
   }
 }

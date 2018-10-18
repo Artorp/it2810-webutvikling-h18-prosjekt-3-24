@@ -7,10 +7,11 @@ export default class EditTodo extends React.Component {
     super(props);
     this.state = {
       chosenDate: new Date(),
-      nameOfTodo: this.nameOfTodo,
+      nameOfTodo: '',
     };
     this.setDate = this.setDate.bind(this);
     this.setName = this.setName.bind(this);
+    this.addTodo = this.addTodo.bind(this);
   }
 
   setDate(newDate) {
@@ -22,8 +23,9 @@ export default class EditTodo extends React.Component {
   }
 
   addTodo() {
-    console.log('Legg til gjøremål');
+    console.log('addTodo(): date:' + this.state.chosenDate + ', name: ' + this.state.nameOfTodo);
     Actions.pop();
+    this.props.onCreate(this.state);
   }
 
   render() {
@@ -31,12 +33,12 @@ export default class EditTodo extends React.Component {
       <View>
         <Form>
           <Item>
-            <Input placeholder="Nytt gjøremål" onChange={this.setName} />
+            <Input placeholder="Nytt gjøremål" onChangeText={text => this.setName(text)} />
           </Item>
           <Item last>
             <DatePicker
               defaultData={this.state.chosenDate}
-              onDateChange={this.setDate}
+              onDateChange={date => this.setDate(date)}
               placeHolderText="Velg dato"
               locale={'no'}
             />
