@@ -82,10 +82,20 @@ Det blir også lettere å tolke commit-treet i ettertid og se hva som skjedde n�
 ### Kilder
 
 Vi har brukt kodesnutter fra denne siden:
+
 - https://tutorialscapital.com/react-native-adding-items-in-scrollview-using-loop-method-android-ios-tutorial-from-scratch/
 
-<!-- ### Testing
+### Testing
 
+Vi tester appen med Jest.
+Vi bruker flere «snapshot»-tester som sjekker at komponentene ikke forandrer seg utilsiktet.
+
+Obs: Vi hadde store problemer med å få testing av komponenten `App` til å virke.
+Etter å har brukt mye tid på å få til en «snapshot»-test, valgte vi til slutt å bruke tid på andre ting, og den er derfor fjernet.
+Den er erstattet med en enkel test som kun tester konstruktøren til `App`.
+`App` er rotkomponenten, og en feil her er heldigvis fort synlig når vi prøver appen manuelt.
+
+<!--
 Vi har fulgt denne sjekklisten når vi har testet nettsiden.
 
 - Hele siden skal lastes inn. Dette gjelder startbildet, lydavspiller, knappene på fanen, radioknapper, riktig font
