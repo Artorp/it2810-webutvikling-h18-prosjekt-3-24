@@ -35,10 +35,17 @@ Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
 Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
 
 ### Teknologi brukt
-
+<!--
 I tutorial-form slik at andre kan lære av det.
 
-Alle de viktigste valgene vi har gjort og begrunnelse for dem.
+Alle de viktigste valgene vi har gjort og begrunnelse for dem. -->
+
+- [Nativebase](https://nativebase.io/)
+- [react-native-router-flux](https://www.npmjs.com/package/react-native-router-flux)
+- [react-native-progress](https://github.com/oblador/react-native-progress)
+- [Expo pedometer](https://docs.expo.io/versions/latest/sdk/pedometer)
+- [AsyncStorage](https://facebook.github.io/react-native/docs/asyncstorage)
+- [ESlint](https://eslint.org/) / [Prettier](https://github.com/prettier/prettier)
 
 #### Nativebase
 
