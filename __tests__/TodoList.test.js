@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TodoList from '../TodoList';
+import TodoList from '../components/TodoList';
 
 const TodoList2 = class extends TodoList {
   setState(newState) {

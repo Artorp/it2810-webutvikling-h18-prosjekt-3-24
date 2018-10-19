@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
 import Expo from 'expo';
-import TodoList from './TodoList';
+import TodoList from './components/TodoList';
 import EditTodo from './components/EditTodo';
 
 export default class App extends React.Component {
