@@ -11,6 +11,8 @@ npm i # kort for `npm install`
 npm start
 ```
 
+
+
 Nettsiden kommer til å være tilgjengelig på http://it2810-24.idi.ntnu.no/prosjekt3.
 Den er også tilgjengelig på https://it2810-2018-gr28-p2.firebaseapp.com/ (liten skrivefeil i navnet – vi er gruppe 24). -->
 
@@ -31,6 +33,46 @@ Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
 I tutorial-form slik at andre kan lære av det.
 
 Alle de viktigste valgene vi har gjort og begrunnelse for dem.
+
+#### Nativebase
+
+Vi har brukt et UI komponent bibliotek som heter nativebase. Dette biblioteket gjør det lett å bygge en app som fungerer både på IOS og på Android. Måten man kommer i gang med å bruke dette på er å kjøre kommandoene:
+
+```bash
+npm install native-base --save
+react-native link
+```
+
+Mange basic komponenter som brukes i react native, som for eksempel ```<View> ``` og ```<Text>``` finnes også i nativebase. Vi valgte å bruke disse, så istedenfor å skrive
+
+```javascript
+import { View, Text } from 'react-native'
+```
+
+skriver vi:
+
+```javascript
+import { View, Text } from 'native-base'
+```
+
+#### react-native-router-flux
+Vi brukte react-native-router-flux (RNRF) for å håndtere navigasjon mellom komponenter, slik at vi kunne ha forskjellige sider i appen.  For å bruke RNRF, er det to viktige komponenter man må bruke i App.js. ```Router Component``` og ```Scene``` Component. Her er eksempel fra koden vår:
+
+```javascript
+import { Router, Scene } from 'react-native-router-flux';
+
+    return (
+      <Router hideNavBar="true">
+        <Scene key="root">
+          <Scene key="todoList" component={TodoList} title="TodoList" initial hideNavBar />
+          <Scene key="editTodo" component={EditTodo} title="EditTodo" />
+        </Scene>
+      </Router>
+```
+
+Vi har altså en Scene for hver skjerm vi vil vise. I vårt tilfelle, selve TodoList på en skjerm, og EditTodo (som kan legge til ett nytt gjøremål) på en annen skjerm. For å navigere fra TodoList til EditTodo bruker man ```key``` til rett side, i dette tilfelle editTodo, og bruker ```Actions.editTodo();```
+Da må man også bruke importere den først ved ```import { Actions } from 'react-native-router-flux';```
+Når vi går andre veien, vil vi ikke fyre opp siden på nytt, men heller gå tilbake. Da bruker vi ```Actions.pop();```
 
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
