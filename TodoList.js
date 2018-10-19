@@ -33,6 +33,7 @@ export default class TodoList extends React.Component {
   newItem(editTodoState) {
     var allItems = this.state.items;
     var d = editTodoState.chosenDate;
+    console.log('d: ' + d);
     allItems.push(
       editTodoState.nameOfTodo +
         ' (' +
