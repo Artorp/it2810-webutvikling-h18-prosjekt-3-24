@@ -5,6 +5,7 @@ import { List, ListItem, Body, Container, Content, Header, Text, Title } from 'n
 import { Actions } from 'react-native-router-flux';
 import TodoListItem from './TodoListItem';
 import NewTodoButton from './NewTodoButton';
+import StepCounter from './StepCounter';
 
 export default class TodoList extends React.Component {
   constructor() {
@@ -124,6 +125,7 @@ export default class TodoList extends React.Component {
           </Body>
         </Header>
         <Content padder>
+          <StepCounter />
           <NewTodoButton onPress={newTodoPage} />
           <List>{this.scrollViewArray()}</List>
           <Text>{this.props.hello}</Text>
