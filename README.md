@@ -83,6 +83,12 @@ Det fantes en slik tidligere, men ifølge en [issue på GitHub-siden til Nativeb
 Vi fant og bruker den som følger med pakken react-native-progress.
 Å sette opp dette var rett fram, vi fulgte bare den [enkle dokumentasjonen](https://www.npmjs.com/package/react-native-progress).
 
+#### Expo pedometer
+Vi bruker [expo sitt pedometer](https://docs.expo.io/versions/latest/sdk/pedometer) for sanntidsoppdatering av skrittelling i appen. Avhengig av om appen kjøres på iOS elles android, brukes henholdsvis Core Motion eller Google Fit som backend.
+
+#### AsyncStorage
+AsyncStorage brukes for at appen skal ha hukommelse av gjøremålene fra gang til gang. I følge [den offisielle dokumentasjonen](https://facebook.github.io/react-native/docs/asyncstorage), anbefales det å bruke et abstraksjonnivå over AsyncStorage. Mye grunnet at AsyncStorage ikke har noen form for kryptering. Siden oppgaven ikke spesifiserte noe om dette, og fordi vi ikke lager noen sensitiv informasjon, er ikke dette gjort. Nå lagrer vi alle gjøremålene som en stringifisert liste (`JSON.stringify(...)`) med `todoList` som nøkkel. Når vi legger til et gjøremål, overskriver vi denne listen med det nye gjøremålet på enden av listen. Når vi sletter et gjøremål, fjerner vi alle gjøremål som har likt navn som det gjøremålet som slettes (ikke helt optimalt!).
+
 
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
