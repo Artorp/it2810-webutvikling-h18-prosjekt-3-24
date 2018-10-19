@@ -28,6 +28,7 @@ export default class TodoList extends React.Component {
       items: [],
     };
     this.newItem = this.newItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   newItem(editTodoState) {
@@ -50,10 +51,22 @@ export default class TodoList extends React.Component {
     console.log(this.state.items);
   }
 
+  /**
+   * This takes a string representation of the todo item as an argument.
+   * In the future, the todo item should be a proper object with an id, date object and a name
+   * @param {String} itemString String of the todo item
+   */
+  deleteItem(itemString) {
+    this.setState(({ items }) => ({
+      items: items.filter(todoItem => todoItem !== itemString),
+    }));
+    console.log('Slettet todo item ' + itemString);
+  }
+
   scrollViewArray() {
     return this.state.items.map((item, key) => (
       <ListItem key={key}>
-        <TodoListItem name={item} />
+        <TodoListItem name={item} deleteItem={this.deleteItem} />
       </ListItem>
     ));
   }
