@@ -77,6 +77,13 @@ Vi har altså en Scene for hver skjerm vi vil vise. I vårt tilfelle, selve Todo
 Da må man også bruke importere den først ved ```import { Actions } from 'react-native-router-flux';```
 Når vi går andre veien, vil vi ikke fyre opp siden på nytt, men heller gå tilbake. Da bruker vi ```Actions.pop();```
 
+#### react-native-progress
+Nativebase mangler en komponent for å vise framgang – en «progress bar».
+Det fantes en slik tidligere, men ifølge en [issue på GitHub-siden til Nativebase](https://github.com/GeekyAnts/NativeBase/issues/1128) ble den droppet til fordel for en innebygd React Native-komponent som ikke dekker vårt behov.
+Vi fant og bruker den som følger med pakken react-native-progress.
+Å sette opp dette var rett fram, vi fulgte bare den [enkle dokumentasjonen](https://www.npmjs.com/package/react-native-progress).
+
+
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
 Disse tar seg av henholdsvis valg av kategorier; visning av bilde, tekst og lydavspiller; og knappene som bytter mellom faner.

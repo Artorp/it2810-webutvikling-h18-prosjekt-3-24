@@ -1,21 +1,6 @@
 import React from 'react';
 import { AsyncStorage, StyleSheet, Platform, StatusBar } from 'react-native';
-import {
-  List,
-  ListItem,
-  Body,
-  Button,
-  Container,
-  Content,
-  Footer,
-  FooterTab,
-  Header,
-  Icon,
-  Left,
-  Right,
-  Text,
-  Title,
-} from 'native-base';
+import { List, ListItem, Body, Container, Content, Header, Text, Title } from 'native-base';
 
 import { Actions } from 'react-native-router-flux';
 import TodoListItem from './TodoListItem';
@@ -49,6 +34,7 @@ export default class TodoList extends React.Component {
   newItem(editTodoState) {
     var allItems = this.state.items;
     var d = editTodoState.chosenDate;
+    console.log('d: ' + d);
     allItems.push(
       editTodoState.nameOfTodo +
         ' (' +
@@ -134,15 +120,9 @@ export default class TodoList extends React.Component {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>Supermotivator 3000</Title>
           </Body>
-          <Right />
         </Header>
         <Content padder>
           <StepCounter />
@@ -150,18 +130,6 @@ export default class TodoList extends React.Component {
           <List>{this.scrollViewArray()}</List>
           <Text>{this.props.hello}</Text>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 1</Text>
-            </Button>
-          </FooterTab>
-          <FooterTab>
-            <Button full>
-              <Text>Fane 2</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }
