@@ -2,8 +2,8 @@
 // Det ble for tidkrevende å få den til å virke, og vi prioriterer andre ting før fristen.
 // Forsøket på testing står her kommentert ut for framtidig referanse.
 
-import React from 'react';
-import renderer from 'react-test-renderer';
+// import React from 'react';
+// import renderer from 'react-test-renderer';
 import App from '../App';
 
 test('Opprette et App-objekt', () => {
