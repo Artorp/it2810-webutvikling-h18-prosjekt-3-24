@@ -25,7 +25,10 @@ På Android kan man installere appen Google Fit og aktivere denne.
 
 ### Plattformuavhengighet
 
-Appen har blitt testet på både IOS og Android
+Appen har blitt testet på både IOS og Android og fungerer på begge plattformene – med følgende forbehold:
+Den ene personen på gruppen vår som har en Iphone, var opptatt på slutten av utviklingsperioden, og vi har dermed ikke fått prøvd det i sluttfasen på en ordentlig Iphone.
+Vi kan dermed ikke garantere at alt fungerer som det skal der.
+En IOS-simulator har imidlertid gitt lovende resultater.
 
 ### Design
 
