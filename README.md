@@ -2,6 +2,8 @@
 
 Dette er det tredje prosjektet i emnet IT2810 Webutvikling på NTNU høsten 2018. Gruppen består av Mathias Bynke, Henrik Grønbech og Maria Osen.
 
+**TODO: Pass på bug ved relasting pga. skritteller.**
+
 <!-- ## Hvordan kjøre
 
 Hvis du vil kjøre prosjektet lokalt, må du først klone dette repoet. Naviger deretter til rotmappen i prosjektet og kjør disse kommandoene
@@ -29,6 +31,7 @@ Når brukeren først laster inn siden, blir hen vist en tilfeldig fane og en til
 Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
 
 ### Design
+
 Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
 
 ### Teknologi brukt
@@ -46,20 +49,21 @@ npm install native-base --save
 react-native link
 ```
 
-Mange basic komponenter som brukes i react native, som for eksempel ```<View> ``` og ```<Text>``` finnes også i nativebase. Vi valgte å bruke disse, så istedenfor å skrive
+Mange basic komponenter som brukes i react native, som for eksempel `<View>` og `<Text>` finnes også i nativebase. Vi valgte å bruke disse, så istedenfor å skrive
 
 ```javascript
-import { View, Text } from 'react-native'
+import { View, Text } from "react-native";
 ```
 
 skriver vi:
 
 ```javascript
-import { View, Text } from 'native-base'
+import { View, Text } from "native-base";
 ```
 
 #### react-native-router-flux
-Vi brukte react-native-router-flux (RNRF) for å håndtere navigasjon mellom komponenter, slik at vi kunne ha forskjellige sider i appen.  For å bruke RNRF, er det to viktige komponenter man må bruke i App.js. ```Router Component``` og ```Scene``` Component. Her er eksempel fra koden vår:
+
+Vi brukte react-native-router-flux (RNRF) for å håndtere navigasjon mellom komponenter, slik at vi kunne ha forskjellige sider i appen. For å bruke RNRF, er det to viktige komponenter man må bruke i App.js. `Router Component` og `Scene` Component. Her er eksempel fra koden vår:
 
 ```javascript
 import { Router, Scene } from 'react-native-router-flux';
@@ -73,11 +77,12 @@ import { Router, Scene } from 'react-native-router-flux';
       </Router>
 ```
 
-Vi har altså en Scene for hver skjerm vi vil vise. I vårt tilfelle, selve TodoList på en skjerm, og EditTodo (som kan legge til ett nytt gjøremål) på en annen skjerm. For å navigere fra TodoList til EditTodo bruker man ```key``` til rett side, i dette tilfelle editTodo, og bruker ```Actions.editTodo();```
-Da må man også bruke importere den først ved ```import { Actions } from 'react-native-router-flux';```
-Når vi går andre veien, vil vi ikke fyre opp siden på nytt, men heller gå tilbake. Da bruker vi ```Actions.pop();```
+Vi har altså en Scene for hver skjerm vi vil vise. I vårt tilfelle, selve TodoList på en skjerm, og EditTodo (som kan legge til ett nytt gjøremål) på en annen skjerm. For å navigere fra TodoList til EditTodo bruker man `key` til rett side, i dette tilfelle editTodo, og bruker `Actions.editTodo();`
+Da må man også bruke importere den først ved `import { Actions } from 'react-native-router-flux';`
+Når vi går andre veien, vil vi ikke fyre opp siden på nytt, men heller gå tilbake. Da bruker vi `Actions.pop();`
 
 #### react-native-progress
+
 Nativebase mangler en komponent for å vise framgang – en «progress bar».
 Det fantes en slik tidligere, men ifølge en [issue på GitHub-siden til Nativebase](https://github.com/GeekyAnts/NativeBase/issues/1128) ble den droppet til fordel for en innebygd React Native-komponent som ikke dekker vårt behov.
 Vi fant og bruker den som følger med pakken react-native-progress.
