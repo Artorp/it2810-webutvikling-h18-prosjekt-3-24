@@ -7,7 +7,13 @@ export default class TodoListItem extends React.Component {
     return (
       <View style={styles.todoListItem}>
         <Text style={styles.itemText}>{this.props.name}</Text>
-        <Button iconRight rounded small info style={styles.itemButton}>
+        <Button
+          iconRight
+          rounded
+          small
+          info
+          style={styles.itemButton}
+          onPress={() => this.props.deleteItem(this.props.name)}>
           <Text>Fjern</Text>
           <Icon name="trash" />
         </Button>
