@@ -4,37 +4,35 @@ Dette er det tredje prosjektet i emnet IT2810 Webutvikling på NTNU høsten 2018
 
 **TODO: Pass på bug ved relasting pga. skritteller.**
 
-<!-- ## Hvordan kjøre
-
-Hvis du vil kjøre prosjektet lokalt, må du først klone dette repoet. Naviger deretter til rotmappen i prosjektet og kjør disse kommandoene
-
-```bash
-npm i # kort for `npm install`
-npm start
-```
-
-
-
-Nettsiden kommer til å være tilgjengelig på http://it2810-24.idi.ntnu.no/prosjekt3.
-Den er også tilgjengelig på https://it2810-2018-gr28-p2.firebaseapp.com/ (liten skrivefeil i navnet – vi er gruppe 24). -->
-
 ## Dokumentasjon
 
-<!-- ### Funksjonalitet
+### Innhold og funksjonalitet
 
-Nettsiden skulle ifølge kravspesifikasjonen la brukeren veksle mellom 3 kategorier av 3 forskjellige medietyper, tekst, lyd og bilde.
-Hen skulle også kunne vise 4 ulike konstellasjoner innen hver kategori.
-Vi har løst dette ved å ha et valgpanel med radioknapper som lar brukeren velge en kombinasjon av kategorier.
-Med faner (implementert med knapper øverst på siden) kan brukeren bytte mellom bildene, tekstene og musikken innen hver kategori.
-Når brukeren først laster inn siden, blir hen vist en tilfeldig fane og en tilfeldig kombinasjon av kategorier.
+Appen er en prototyp av en såkalt «Personal information and motivation manager» og illustrerer hvordan teknologiene nevnt under kan brukes til å lage funksjonalitet for å organisere en dag.
+Vi har demonstrert dette med to funksjoner: gjøremål og skrittelling, men ytterligere funksjonalitet som dette er mulig.
 
-Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
+Man kan legge til gjøremål ved hjelp av knappen «Nytt gjøremål» i hovedvisningen.
+Der velger man et navn på gjøremålet og en dato og trykker på «Lagre».
+Gjøremålet dukker nå opp på listen i hovedvisningen.
+For å fjerne et gjøremål kan man bruke «fjern»-knappen til høyre for hvert gjøremål i listen.
+Gjøremålene blir lagret og er fortsatt der selv om man lukker og åpner appen.
+
+Brukeren kan se antall skritt hen har gått, øverst på hovedskjermen.
+Dette sammenlignes mot 10000 skritt ved hjelp av en framgangsviser som blir gradvis fylt opp og skifter farge fra rød til grønn.
+Skrittelleren går utover grunnleggende React Native-teknologi og bruker isteden Expo-rammeverket.
+**Obs!** Merk at det kan være nødvendig å godkjenne tilgang til og sette opp skritteller på telefonen for å se skrittantallet øke.
+På Android kan man installere appen Google Fit og aktivere denne.
+
+### Plattformuavhengighet
+
+Appen har blitt testet på både IOS og Android
 
 ### Design
 
 Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
 
 ### Teknologi brukt
+
 <!--
 I tutorial-form slik at andre kan lære av det.
 
@@ -97,23 +95,26 @@ Vi fant og bruker den som følger med pakken react-native-progress.
 Å sette opp dette var rett fram, vi fulgte bare den [enkle dokumentasjonen](https://www.npmjs.com/package/react-native-progress).
 
 #### Expo pedometer
-Vi bruker [expo sitt pedometer](https://docs.expo.io/versions/latest/sdk/pedometer) for sanntidsoppdatering av skrittelling i appen. Avhengig av om appen kjøres på iOS elles android, brukes henholdsvis Core Motion eller Google Fit som backend.
+
+Vi har fulgt [tutorialen/dokumentasjonen til expo sitt pedometer](https://docs.expo.io/versions/latest/sdk/pedometer) for sanntidsoppdatering av skrittelling i appen. Avhengig av om appen kjøres på iOS elles android, brukes henholdsvis Core Motion eller Google Fit som backend.
 
 #### AsyncStorage
+
 AsyncStorage brukes for at appen skal ha hukommelse av gjøremålene fra gang til gang. I følge [den offisielle dokumentasjonen](https://facebook.github.io/react-native/docs/asyncstorage), anbefales det å bruke et abstraksjonnivå over AsyncStorage. Mye grunnet at AsyncStorage ikke har noen form for kryptering. Siden oppgaven ikke spesifiserte noe om dette, og fordi vi ikke lager noen sensitiv informasjon, er ikke dette gjort. Nå lagrer vi alle gjøremålene som en stringifisert liste (`JSON.stringify(...)`) med `todoList` som nøkkel. Når vi legger til et gjøremål, overskriver vi denne listen med det nye gjøremålet på enden av listen. Når vi sletter et gjøremål, fjerner vi alle gjøremål som har likt navn som det gjøremålet som slettes (ikke helt optimalt!).
 
 #### VSCode
+
 Også kjent som Visual Studio Code. Tektredigeringsprogram utviklet av Microsoft. Gratis og åpen kildekode. Bygget på [Electron](https://electronjs.org/) (som også er webteknologi!). Dette programmet har god støtte for utvidelser (eng. extensions) og er rask.
 
-
 #### ESlint / Prettier
+
 Vi har brukt ESlint for at man skal få gode tilbakemeldinger om feil og andre mangler i koden når man utvikler. Etter litt frem og tilbake endte vi opp med å bruke malen `universe/react` etter å ha gått bort fra `react-native`. Vi har brukt Prettier som å autoformattere koden etter malen vi brukte. Dette sørger for at koden blir mer konsistent, at det blir færre mergekonflikter med git og at man ikke trenger å bruket like myd tid å krefter på at koden skal holde god kvalitet. Eksempler på nyttige funksjonalitet disse verktøyene gir er å
+
 - sortere `import`-utrykk automatisk
 - dele opp for lange linjer
 - sørge for at kodebase er kosekvent på `'` og `"`
 
 Dette er en [god video](https://www.youtube.com/watch?v=YIvjKId9m2c) som forklarer hvordan man setter opp ESLint og Prettier i VSCode.
-
 
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
