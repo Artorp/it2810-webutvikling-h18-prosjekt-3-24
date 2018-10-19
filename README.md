@@ -28,6 +28,9 @@ Når brukeren først laster inn siden, blir hen vist en tilfeldig fane og en til
 
 Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
 
+### Design
+Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
+
 ### Teknologi brukt
 
 I tutorial-form slik at andre kan lære av det.
