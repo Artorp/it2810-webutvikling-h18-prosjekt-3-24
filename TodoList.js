@@ -32,8 +32,17 @@ export default class TodoList extends React.Component {
 
   newItem(editTodoState) {
     var allItems = this.state.items;
-    var d=editTodoState.chosenDate;
-    allItems.push(editTodoState.nameOfTodo + ' (' + d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate() + ')');
+    var d = editTodoState.chosenDate;
+    allItems.push(
+      editTodoState.nameOfTodo +
+        ' (' +
+        d.getFullYear() +
+        '-' +
+        (d.getMonth() + 1) +
+        '-' +
+        d.getDate() +
+        ')'
+    );
     this.setState({
       items: allItems,
     });
