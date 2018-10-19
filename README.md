@@ -2,8 +2,6 @@
 
 Dette er det tredje prosjektet i emnet IT2810 Webutvikling på NTNU høsten 2018. Gruppen består av Mathias Bynke, Henrik Grønbech og Maria Osen.
 
-**TODO: Pass på bug ved relasting pga. skritteller.**
-
 ## Dokumentasjon
 
 ### Innhold og funksjonalitet
@@ -28,6 +26,9 @@ Dette sammenlignes mot 10000 skritt ved hjelp av en framgangsviser som blir grad
 Skrittelleren går utover grunnleggende React Native-teknologi og bruker isteden Expo-rammeverket.
 **Obs!** Merk at det kan være nødvendig å godkjenne tilgang til og sette opp skritteller på telefonen for å se skrittantallet øke.
 På Android kan man installere appen Google Fit og aktivere denne.
+Man må så starte appen på nytt.
+**Obs 2!** Pga. [en bug](https://forums.expo.io/t/pedometer-already-managing-a-googleapiclient-with-id-0-react-native-again/14644) i Expo-rammeverket må man passe på å avslutte appen ordentlig før man starter den på nytt.
+Ellers får man beskjed om at skrittelleren er opptatt.
 
 ### Teknologi brukt
 
