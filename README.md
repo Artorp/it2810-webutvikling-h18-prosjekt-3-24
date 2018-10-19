@@ -11,6 +11,8 @@ npm i # kort for `npm install`
 npm start
 ```
 
+
+
 Nettsiden kommer til å være tilgjengelig på http://it2810-24.idi.ntnu.no/prosjekt3.
 Den er også tilgjengelig på https://it2810-2018-gr28-p2.firebaseapp.com/ (liten skrivefeil i navnet – vi er gruppe 24). -->
 
@@ -26,11 +28,54 @@ Når brukeren først laster inn siden, blir hen vist en tilfeldig fane og en til
 
 Tittelen reflekterer valgene brukeren har gjort av kategorier og fane. -->
 
+### Design
+Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
+
 ### Teknologi brukt
 
 I tutorial-form slik at andre kan lære av det.
 
 Alle de viktigste valgene vi har gjort og begrunnelse for dem.
+
+#### Nativebase
+
+Vi har brukt et UI komponent bibliotek som heter nativebase. Dette biblioteket gjør det lett å bygge en app som fungerer både på IOS og på Android. Måten man kommer i gang med å bruke dette på er å kjøre kommandoene:
+
+```bash
+npm install native-base --save
+react-native link
+```
+
+Mange basic komponenter som brukes i react native, som for eksempel ```<View> ``` og ```<Text>``` finnes også i nativebase. Vi valgte å bruke disse, så istedenfor å skrive
+
+```javascript
+import { View, Text } from 'react-native'
+```
+
+skriver vi:
+
+```javascript
+import { View, Text } from 'native-base'
+```
+
+#### react-native-router-flux
+Vi brukte react-native-router-flux (RNRF) for å håndtere navigasjon mellom komponenter, slik at vi kunne ha forskjellige sider i appen.  For å bruke RNRF, er det to viktige komponenter man må bruke i App.js. ```Router Component``` og ```Scene``` Component. Her er eksempel fra koden vår:
+
+```javascript
+import { Router, Scene } from 'react-native-router-flux';
+
+    return (
+      <Router hideNavBar="true">
+        <Scene key="root">
+          <Scene key="todoList" component={TodoList} title="TodoList" initial hideNavBar />
+          <Scene key="editTodo" component={EditTodo} title="EditTodo" />
+        </Scene>
+      </Router>
+```
+
+Vi har altså en Scene for hver skjerm vi vil vise. I vårt tilfelle, selve TodoList på en skjerm, og EditTodo (som kan legge til ett nytt gjøremål) på en annen skjerm. For å navigere fra TodoList til EditTodo bruker man ```key``` til rett side, i dette tilfelle editTodo, og bruker ```Actions.editTodo();```
+Da må man også bruke importere den først ved ```import { Actions } from 'react-native-router-flux';```
+Når vi går andre veien, vil vi ikke fyre opp siden på nytt, men heller gå tilbake. Da bruker vi ```Actions.pop();```
 
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
@@ -82,10 +127,20 @@ Det blir også lettere å tolke commit-treet i ettertid og se hva som skjedde n�
 ### Kilder
 
 Vi har brukt kodesnutter fra denne siden:
+
 - https://tutorialscapital.com/react-native-adding-items-in-scrollview-using-loop-method-android-ios-tutorial-from-scratch/
 
-<!-- ### Testing
+### Testing
 
+Vi tester appen med Jest.
+Vi bruker flere «snapshot»-tester som sjekker at komponentene ikke forandrer seg utilsiktet.
+
+Obs: Vi hadde store problemer med å få testing av komponenten `App` til å virke.
+Etter å har brukt mye tid på å få til en «snapshot»-test, valgte vi til slutt å bruke tid på andre ting, og den er derfor fjernet.
+Den er erstattet med en enkel test som kun tester konstruktøren til `App`.
+`App` er rotkomponenten, og en feil her er heldigvis fort synlig når vi prøver appen manuelt.
+
+<!--
 Vi har fulgt denne sjekklisten når vi har testet nettsiden.
 
 - Hele siden skal lastes inn. Dette gjelder startbildet, lydavspiller, knappene på fanen, radioknapper, riktig font
