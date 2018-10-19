@@ -45,6 +45,7 @@ Alle de viktigste valgene vi har gjort og begrunnelse for dem. -->
 - [react-native-progress](https://github.com/oblador/react-native-progress)
 - [Expo pedometer](https://docs.expo.io/versions/latest/sdk/pedometer)
 - [AsyncStorage](https://facebook.github.io/react-native/docs/asyncstorage)
+- [VSCode](https://code.visualstudio.com/)
 - [ESlint](https://eslint.org/) / [Prettier](https://github.com/prettier/prettier)
 
 #### Nativebase
@@ -100,6 +101,10 @@ Vi bruker [expo sitt pedometer](https://docs.expo.io/versions/latest/sdk/pedomet
 
 #### AsyncStorage
 AsyncStorage brukes for at appen skal ha hukommelse av gjøremålene fra gang til gang. I følge [den offisielle dokumentasjonen](https://facebook.github.io/react-native/docs/asyncstorage), anbefales det å bruke et abstraksjonnivå over AsyncStorage. Mye grunnet at AsyncStorage ikke har noen form for kryptering. Siden oppgaven ikke spesifiserte noe om dette, og fordi vi ikke lager noen sensitiv informasjon, er ikke dette gjort. Nå lagrer vi alle gjøremålene som en stringifisert liste (`JSON.stringify(...)`) med `todoList` som nøkkel. Når vi legger til et gjøremål, overskriver vi denne listen med det nye gjøremålet på enden av listen. Når vi sletter et gjøremål, fjerner vi alle gjøremål som har likt navn som det gjøremålet som slettes (ikke helt optimalt!).
+
+#### VSCode
+Også kjent som Visual Studio Code. Tektredigeringsprogram utviklet av Microsoft. Gratis og åpen kildekode. Bygget på [Electron](https://electronjs.org/) (som også er webteknologi!). Dette programmet har god støtte for utvidelser (eng. extensions) og er rask.
+
 
 #### ESlint / Prettier
 Vi har brukt ESlint for at man skal få gode tilbakemeldinger om feil og andre mangler i koden når man utvikler. Etter litt frem og tilbake endte vi opp med å bruke malen `universe/react` etter å ha gått bort fra `react-native`. Vi har brukt Prettier som å autoformattere koden etter malen vi brukte. Dette sørger for at koden blir mer konsistent, at det blir færre mergekonflikter med git og at man ikke trenger å bruket like myd tid å krefter på at koden skal holde god kvalitet. Eksempler på nyttige funksjonalitet disse verktøyene gir er å
