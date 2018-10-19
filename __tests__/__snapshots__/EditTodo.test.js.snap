@@ -48,7 +48,7 @@ exports[`blir tegnet riktig 1`] = `
       <TextInput
         allowFontScaling={true}
         editable={true}
-        onChange={[Function]}
+        onChangeText={[Function]}
         placeholder="Nytt gjøremål"
         placeholderTextColor="#575757"
         style={

@@ -24,19 +24,48 @@ import NewTodoButton from './NewTodoButton';
 export default class TodoList extends React.Component {
   constructor() {
     super();
-    this.items = [];
-    for (let i = 0; i < 60; i++) this.items.push('Gjøremål nummer ' + i);
+    this.state = {
+      items: [],
+    };
+    this.newItem = this.newItem.bind(this);
+  }
+
+  newItem(editTodoState) {
+    var allItems = this.state.items;
+    var d = editTodoState.chosenDate;
+    allItems.push(
+      editTodoState.nameOfTodo +
+        ' (' +
+        d.getFullYear() +
+        '-' +
+        (d.getMonth() + 1) +
+        '-' +
+        d.getDate() +
+        ')'
+    );
+    this.setState({
+      items: allItems,
+    });
+    console.log('New items kjørt');
+    console.log(this.state.items);
   }
 
   scrollViewArray() {
-    return this.items.map((item, key) => (
+    return this.state.items.map((item, key) => (
       <ListItem key={key}>
         <TodoListItem name={item} />
       </ListItem>
     ));
   }
 
+  // Sends props an functions to EditTodo
+  createNewTodoPage() {
+    Actions.editTodo({ mytest: 'min test', onCreate: this.newItem });
+    console.log('newtodoname: ' + this.props.newtodoname);
+  }
+
   render() {
+    var newTodoPage = () => this.createNewTodoPage();
     return (
       <Container style={styles.container}>
         <Header>
@@ -51,12 +80,9 @@ export default class TodoList extends React.Component {
           <Right />
         </Header>
         <Content padder>
-          <NewTodoButton
-            onPress={() => {
-              Actions.editTodo();
-            }}
-          />
+          <NewTodoButton onPress={newTodoPage} />
           <List>{this.scrollViewArray()}</List>
+          <Text>{this.props.hello}</Text>
         </Content>
         <Footer>
           <FooterTab>
