@@ -4,6 +4,11 @@ import { StyleSheet } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import { Text, View } from 'native-base';
 
+/**
+ * Much of this class is taken from the expo pedometer tutorial.
+ * https://docs.expo.io/versions/latest/sdk/pedometer
+ */
+
 export default class StepCounter extends React.Component {
   state = {
     isPedometerAvailable: 'checking',
@@ -61,14 +66,21 @@ export default class StepCounter extends React.Component {
   };
 
   render() {
-    const progress = Math.max(0, Math.min(1, this.state.todayStepCount / this.state.goalStepCount));
+    const progress = Math.max(
+      0,
+      Math.min(
+        1,
+        (this.state.todayStepCount + this.state.currentStepCount) / this.state.goalStepCount
+      )
+    );
     const red = 255 * Math.max(0, Math.min(1, 2 * (1 - progress)));
     const green = 255 * Math.max(0, Math.min(1, 2 * progress));
     console.log('progress: ' + progress + ', red: ' + red + ', green: ' + green);
     return (
       <View padder style={styles.counter}>
         <Text>
-          Du har gått {this.state.todayStepCount} av {this.state.goalStepCount} skritt i dag.
+          Du har gått {this.state.todayStepCount + this.state.currentStepCount} av{' '}
+          {this.state.goalStepCount} skritt i dag.
         </Text>
         <ProgressBar
           progress={progress}
