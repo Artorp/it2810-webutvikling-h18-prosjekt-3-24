@@ -8,6 +8,12 @@ Dette er det tredje prosjektet i emnet IT2810 Webutvikling på NTNU høsten 2018
 
 ### Innhold og funksjonalitet
 
+#### Design
+
+Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
+
+#### Detaljer
+
 Appen er en prototyp av en såkalt «Personal information and motivation manager» og illustrerer hvordan teknologiene nevnt under kan brukes til å lage funksjonalitet for å organisere en dag.
 Vi har demonstrert dette med to funksjoner: gjøremål og skrittelling, men ytterligere funksjonalitet som dette er mulig.
 
@@ -23,23 +29,7 @@ Skrittelleren går utover grunnleggende React Native-teknologi og bruker isteden
 **Obs!** Merk at det kan være nødvendig å godkjenne tilgang til og sette opp skritteller på telefonen for å se skrittantallet øke.
 På Android kan man installere appen Google Fit og aktivere denne.
 
-### Plattformuavhengighet
-
-Appen har blitt testet på både IOS og Android og fungerer på begge plattformene – med følgende forbehold:
-Den ene personen på gruppen vår som har en Iphone, var opptatt på slutten av utviklingsperioden, og vi har dermed ikke fått prøvd det i sluttfasen på en ordentlig Iphone.
-Vi kan dermed ikke garantere at alt fungerer som det skal der.
-En IOS-simulator har imidlertid gitt lovende resultater.
-
-### Design
-
-Vi bestemte oss for å lage en todo-app. En bruker skal kunne legge til nye gjøremål og fjerne de når de er gjort. Når man legger til skal man også velge dato for deadline på todoen. I tillegg ville vi at appen skulle være motiverende ved å lage en skritteller, som viser skrittene du har gått akkurat i dag helt øverst.
-
 ### Teknologi brukt
-
-<!--
-I tutorial-form slik at andre kan lære av det.
-
-Alle de viktigste valgene vi har gjort og begrunnelse for dem. -->
 
 - [Nativebase](https://nativebase.io/)
 - [react-native-router-flux](https://www.npmjs.com/package/react-native-router-flux)
@@ -119,42 +109,12 @@ Vi har brukt ESlint for at man skal få gode tilbakemeldinger om feil og andre m
 
 Dette er en [god video](https://www.youtube.com/watch?v=YIvjKId9m2c) som forklarer hvordan man setter opp ESLint og Prettier i VSCode.
 
-<!-- Vi har basert løsningen på React og JSX.
-Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
-Disse tar seg av henholdsvis valg av kategorier; visning av bilde, tekst og lydavspiller; og knappene som bytter mellom faner.
-Hva som skal vises, er til enhver tid bestemt av oppføringer i tilstanden til `App`-komponenten.
-Når brukeren trykker på en fane eller en kategori, er det funksjoner i `App` som oppdaterer disse oppføringene med `setState`.
-Disse funksjonene og oppføringene blir sendt ned til barnekomponentene som egenskaper («properties»). -->
+### Plattformuavhengighet
 
-<!-- ### Ajax
-
-Vi bruker AJAX kun med den javascript-funksjonen `fetch` – vi bruker ingen tredjepartsbiblioteker til dette.
-`fetch` er en noe nyere metode, men nå støttet av de [største nettleserene](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API#Browser_compatibility).
-Innlasting av bilder, tekst (og ikke musikk) med Ajax.
-Filene ligger lokalt.
-
-Filene blir automatisk cachet av flese nettleserene.
-Når man sender en en `GET`-request, og man allerede har lastet ned den daten man spør fra om før, får man 304 som svar.
-Dette viser at dataene blir cachet fra i nettleseren.
-Man kan se dette ved å se på fanen som tilsvarere _Network_ i Google Chrome i _inspiseringsverktøy_. -->
-<!--
-
-### Responsiv design
-
-Vi har gjort flere grep for at siden skal se bra ut uavhengig av vindusstørrelse.
-Hele siden er implementert med flexbox.
-Innenfor `ArtDisplay` er flexbox satt opp med `wrap` slik at lydavspilleren og teksten blir plassert under bildet når det blir for trangt om plassen.
-I `App` er topp-flexbox-konteineren satt opp i `row` for brede vinduer og `column` for smale vinduer.
-Vi implementerte dette med media query i CSS for å kunne endre andre ting på siden samtidig som denne endringen.
-Spesielt viktig er det at kategoriene med valg blir plassert ved siden av hverandre istedenfor over hverandre (en flexbox blir satt til `row`).
-I tillegg har vi implementert enda en media query som slår inn dersom siden blir veldig smal (typisk mobilskjerm i høydeformat) og plasserer kategorivalgene under hverandre igjen.
-Vi syntes at det så best ut slik på mobile og andre små skjermer.
-
-Størrelsen på bildet blir også tilpasset bredden på vinduet.
-For å unngå at bilder på høykant blir veldig store la vi inn en relativ høydebegrensning på bildene på 70 % av vinduets høyde. Dette har bare en effekt når vinduet er bredt, som på en PC-skjerm.
-
-Slik vi har satt det opp, blir bildene og andre elementer vist i sin fulle bredde slik de skal på en smal mobilskjerm.
-Vi har derfor ikke sett at å legge til en `viewport`-`meta`-tag gjør noen positiv forskjell, og vi har derfor valgt å ikke ha det med. -->
+Appen har blitt testet på både IOS og Android og fungerer på begge plattformene – med følgende forbehold:
+Den ene personen på gruppen vår som har en Iphone, var opptatt på slutten av utviklingsperioden, og vi har dermed ikke fått prøvd det i sluttfasen på en ordentlig Iphone.
+Vi kan dermed ikke garantere at alt fungerer som det skal der.
+En IOS-simulator har imidlertid gitt lovende resultater.
 
 ### Bruk av Git
 
@@ -166,46 +126,14 @@ Det lar oss se på endringer og diskutere/justere dem i samarbeid før de blir d
 Dessuten er det mye lettere å glemme å tagge en issue i en commitmelding.
 Det blir også lettere å tolke commit-treet i ettertid og se hva som skjedde når.
 
-### Kilder
-
-Vi har brukt kodesnutter fra disse sidene:
-
-- https://tutorialscapital.com/react-native-adding-items-in-scrollview-using-loop-method-android-ios-tutorial-from-scratch/
-- https://docs.expo.io/versions/latest/sdk/pedometer
-
 ### Testing
 
 Vi tester appen med Jest.
 Vi bruker flere «snapshot»-tester som sjekker at komponentene ikke forandrer seg utilsiktet.
+I tillegg tester vi den grunnleggende gjøremål-funksjonaliteten.
+En del brukergrensesnitt-funksjonalitet har det vært vanskelig å teste uten å bruke Enzyme-rammeverket.
 
 Obs: Vi hadde store problemer med å få testing av komponenten `App` til å virke.
 Etter å har brukt mye tid på å få til en «snapshot»-test, valgte vi til slutt å bruke tid på andre ting, og den er derfor fjernet.
 Den er erstattet med en enkel test som kun tester konstruktøren til `App`.
 `App` er rotkomponenten, og en feil her er heldigvis fort synlig når vi prøver appen manuelt.
-
-<!--
-Vi har fulgt denne sjekklisten når vi har testet nettsiden.
-
-- Hele siden skal lastes inn. Dette gjelder startbildet, lydavspiller, knappene på fanen, radioknapper, riktig font
-- Alle knappene skal ha korrekt oppførsel
-- Lydavspilleren skal fungere
-- Layouten på siden skal være slik som spesifisert i avsnittet om responsiv design
-
-#### Oversikt over hvilke plattformer vi har testet på
-
-TODO: Nøyere oversikt over akkurat hva som har blitt testet, kanskje på hver plattform.
-
-- Google chrome/Chromium
-  - [x] MacOS
-  - [x] Windows 10
-  - [x] Android
-    - Her er det ikke noe boks rundt knappene til fanen. Funksjonaliteten fungerer ellers fint.
-  - [x] Ubuntu
-- Firefox
-  - [x] MacOS
-  - [x] Windows 10
-  - [x] Android
-  - [x] Ubuntu
-- Safari
-  - [x] MacOS
-  - [x] iOs -->
