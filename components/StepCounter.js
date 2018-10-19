@@ -66,7 +66,7 @@ export default class StepCounter extends React.Component {
     const green = 255 * Math.max(0, Math.min(1, 2 * progress));
     console.log('progress: ' + progress + ', red: ' + red + ', green: ' + green);
     return (
-      <View style={styles.counter}>
+      <View padder style={styles.counter}>
         <Text>
           Du har gått {this.state.todayStepCount} av {this.state.goalStepCount} skritt i dag.
         </Text>
@@ -85,5 +85,7 @@ export default class StepCounter extends React.Component {
 const styles = StyleSheet.create({
   counter: {
     marginBottom: 12,
+    borderColor: 'rgb(0, 0, 153)',
+    borderWidth: 1,
   },
 });

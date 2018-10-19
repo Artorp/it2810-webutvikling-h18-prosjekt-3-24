@@ -53,7 +53,7 @@ export default class TodoList extends React.Component {
           <Right />
         </Header>
         <Content padder>
-          <StepCounter/>
+          <StepCounter />
           <NewTodoButton
             onPress={() => {
               Actions.editTodo();
