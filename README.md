@@ -100,6 +100,8 @@ Vi har brukt ESlint for at man skal få gode tilbakemeldinger om feil og andre m
 - dele opp for lange linjer
 - sørge for at kodebase er kosekvent på `'` og `"`
 
+Dette er en [god video](https://www.youtube.com/watch?v=YIvjKId9m2c) som forklarer hvordan man setter opp ESLint og Prettier i VSCode.
+
 
 <!-- Vi har basert løsningen på React og JSX.
 Rotkomponenten heter `App`. Den deler siden grovt inn i deler, hvorav tre er egne komponenter: `OptionPanel`, `ArtDisplay` og `Tabs`.
